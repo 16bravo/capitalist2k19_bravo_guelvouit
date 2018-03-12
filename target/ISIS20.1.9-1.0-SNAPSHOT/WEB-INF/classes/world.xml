@@ -107,120 +107,120 @@ and open the template in the editor.
         <pallier>
             <name>Servlet CSS</name>
             <logo>cdilunaire.png</logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <seuil>1000</seuil>
+            <idcible>1</idcible>
+            <ratio>3</ratio>
+            <typeratio>GAIN</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Saké du Wok Wang</name>
+            <logo>cdilunaire.png</logo>
+            <seuil>10000</seuil>
+            <idcible>1</idcible>
+            <ratio>2</ratio>
+            <typeratio>VITESSE</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Chinese Women</name>
+            <logo>cdilunaire.png</logo>
+            <seuil>20000</seuil>
+            <idcible>1</idcible>
+            <ratio>3</ratio>
+            <typeratio>GAIN</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Livre de la BU</name>
+            <logo>cdilunaire.png</logo>
+            <seuil>100000</seuil>
+            <idcible>1</idcible>
+            <ratio>2</ratio>
+            <typeratio>VITESSE</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Androboom pour les forts</name>
+            <logo>pingping.png</logo>
+            <seuil>50000</seuil>
+            <idcible>2</idcible>
+            <ratio>3.33</ratio>
+            <typeratio>GAIN</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Turkish Boi Rage</name>
+            <logo>pingping.png</logo>
+            <seuil>1000000</seuil>
+            <idcible>2</idcible>
+            <ratio>2</ratio>
+            <typeratio>VITESSE</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Kârcâsône</name>
+            <logo>pingping.png</logo>
+            <seuil>15000000</seuil>
+            <idcible>2</idcible>
+            <ratio>3.33</ratio>
+            <typeratio>GAIN</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Coupe du monde de Tchoukball</name>
+            <logo>tout.png</logo>
+            <seuil>100000</seuil>
+            <idcible>0</idcible>
+            <ratio>3.33</ratio>
+            <typeratio>GAIN</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Les Mémoires de Spinoza</name>
+            <logo>tout.png</logo>
+            <seuil>1000000</seuil>
+            <idcible>0</idcible>
+            <ratio>2</ratio>
+            <typeratio>VITESSE</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Big Mac de Léa</name>
+            <logo>tout.png</logo>
+            <seuil>5000000</seuil>
+            <idcible>0</idcible>
+            <ratio>3.33</ratio>
+            <typeratio>GAIN</typeratio>
             <unlocked></unlocked>
         </pallier>
     </upgrades>
     <angelupgrades>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Rattrapage in-extremis</name>
+            <logo>tout.png</logo>
+            <seuil>1</seuil>
+            <idcible>0</idcible>
+            <ratio>2</ratio>
+            <typeratio>VITESSE</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Feuille de présence</name>
+            <logo>maltesers.png</logo>
+            <seuil>10000</seuil>
+            <idcible>1</idcible>
+            <ratio>3</ratio>
+            <typeratio>GAIN</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
+            <name>Tournoi de Ping Pong</name>
+            <logo>pingping.png</logo>
+            <seuil>100000</seuil>
+            <idcible>2</idcible>
+            <ratio>3</ratio>
+            <typeratio>GAIN</typeratio>
             <unlocked></unlocked>
         </pallier>
     </angelupgrades>
