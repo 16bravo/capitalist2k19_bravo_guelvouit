@@ -1,7 +1,10 @@
+com\mycompany\isis20\ApplicationConfig.class
 generated\PallierType.class
 generated\World.class
 generated\ObjectFactory.class
 generated\ProductType.class
 generated\TyperatioType.class
 generated\PalliersType.class
+com\mycompany\isis20\Services.class
 generated\ProductsType.class
+com\mycompany\isis20\GenericResource.class

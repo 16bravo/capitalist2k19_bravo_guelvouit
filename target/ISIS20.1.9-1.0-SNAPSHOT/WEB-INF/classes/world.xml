@@ -9,131 +9,250 @@ and open the template in the editor.
 <world
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:noNamespaceSchemaLocation='jaxb/Bind1/worldSchema.xsd'>
-    <name>ISIS Capitalist 2k19</name>
+    <name>Pataterie Capitalist 2k19</name>
     <logo>mainlogo.png</logo>
     <money></money>
     <score></score>
-    <totalangels></totalangels>
-    <activeangels></activeangels>
-    <angelbonus></angelbonus>
+    <totalangels>0</totalangels>
+    <activeangels>0</activeangels>
+    <angelbonus>2</angelbonus>
     <lastupdate></lastupdate>
     <products>
         <product>
             <id>1</id>
-            <name>CDI Lunaire</name>
-            <logo>cdilunaire.png</logo>
+            <name>Chips</name>
+            <logo>chips.jpg</logo>
             <cout>5</cout>
             <croissance>1.06</croissance>
             <revenu>1</revenu>
-            <vitesse>0.5</vitesse>
-            <quantite></quantite>
+            <vitesse>1000</vitesse>
+            <quantite>1</quantite>
             <timeleft></timeleft>
             <managerUnlocked></managerUnlocked>
             <palliers>
                 <pallier>
-                    <name>CDI Lunaire x2</name>
-                    <logo>cdilunaire10.png</logo>
+                    <name>Chips x2</name>
+                    <logo>chips.jpg</logo>
                     <seuil>10</seuil>
                     <idcible>1</idcible>
                     <ratio>2</ratio>
                     <typeratio>GAIN</typeratio>
-                    <unlocked>0</unlocked>
+                    <unlocked></unlocked>
                 </pallier>
                 <pallier>
-                    <name>CDI Lunaire x3</name>
-                    <logo>cdilunaire50.png</logo>
+                    <name>Chips x3</name>
+                    <logo>chips.jpg</logo>
                     <seuil>50</seuil>
                     <idcible>1</idcible>
                     <ratio>3</ratio>
-                    <typeratio>GAIN</typeratio>
-                    <unlocked>0</unlocked>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked></unlocked>
                 </pallier>
             </palliers>
         </product>
         <product>
             <id>2</id>
-            <name>Raquette de Ping Ping</name>
-            <logo>pingping.png</logo>
+            <name>Frites</name>
+            <logo>frites.png</logo>
             <cout>40</cout>
             <croissance>1.15</croissance>
-            <revenu>40</revenu>
-            <vitesse>2</vitesse>
+            <revenu>35</revenu>
+            <vitesse>2000</vitesse>
             <quantite></quantite>
             <timeleft></timeleft>
             <managerUnlocked></managerUnlocked>
             <palliers>
                 <pallier>
-                    <name>Raquette de Ping Ping x2</name>
-                    <logo>pingping10.png</logo>
+                    <name>Frites x2</name>
+                    <logo>frites.png</logo>
                     <seuil>10</seuil>
                     <idcible>2</idcible>
                     <ratio>2</ratio>
                     <typeratio>GAIN</typeratio>
-                    <unlocked>0</unlocked>
+                    <unlocked></unlocked>
                 </pallier>
                 <pallier>
-                    <name>Raquette de Ping Ping x3</name>
-                    <logo>pingping100.png</logo>
+                    <name>Frites x3</name>
+                    <logo>frites.png</logo>
                     <seuil>100</seuil>
                     <idcible>2</idcible>
                     <ratio>3</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>3</id>
+            <name>Potatoes</name>
+            <logo>potatoes.jpg</logo>
+            <cout>1800</cout>
+            <croissance>1.14</croissance>
+            <revenu>1200</revenu>
+            <vitesse>4000</vitesse>
+            <quantite></quantite>
+            <timeleft></timeleft>
+            <managerUnlocked></managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>Potatoes x2</name>
+                    <logo>potatoes.jpg</logo>
+                    <seuil>10</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2.1</ratio>
                     <typeratio>GAIN</typeratio>
-                    <unlocked>0</unlocked>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name>Chips x3</name>
+                    <logo>potatoes.jpg</logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>3.1</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>4</id>
+            <name>Purée</name>
+            <logo>puree.jpg</logo>
+            <cout>75000</cout>
+            <croissance>1.13</croissance>
+            <revenu>37500</revenu>
+            <vitesse>12000</vitesse>
+            <quantite></quantite>
+            <timeleft></timeleft>
+            <managerUnlocked></managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>Purée x2.2</name>
+                    <logo>puree.jpg</logo>
+                    <seuil>10</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2.2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name>Purée x3.2</name>
+                    <logo>puree.jpg</logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>3.2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>5</id>
+            <name>Tartiflette</name>
+            <logo>tartiflette.jpg</logo>
+            <cout>2400000</cout>
+            <croissance>1.12</croissance>
+            <revenu>1200000</revenu>
+            <vitesse>28000</vitesse>
+            <quantite></quantite>
+            <timeleft></timeleft>
+            <managerUnlocked></managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>Tartiflette x2.2</name>
+                    <logo>tartiflette.jpg</logo>
+                    <seuil>10</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2.2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name>Tartiflette x3.2</name>
+                    <logo>tartiflette.jpg</logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>3.2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>6</id>
+            <name>Raclette</name>
+            <logo>raclette.jpg</logo>
+            <cout>80000000</cout>
+            <croissance>1.1</croissance>
+            <revenu>40000000</revenu>
+            <vitesse>40000</vitesse>
+            <quantite></quantite>
+            <timeleft></timeleft>
+            <managerUnlocked></managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>Raclette x2.3</name>
+                    <logo>raclette.jpg</logo>
+                    <seuil>10</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2.3</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name>Raclette x3.3</name>
+                    <logo>raclette.jpg</logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>3.3</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked></unlocked>
                 </pallier>
             </palliers>
         </product>
     </products>
     <allunlocks>
         <pallier>
-            <name>Tout x2</name>
-            <logo>tout15.png</logo>
-            <seuil>15</seuil>
+            <name>Vitesse Tout x2</name>
+            <logo>dieu.png</logo>
+            <seuil>10</seuil>
             <idcible>0</idcible>
             <ratio>2</ratio>
-            <typeratio>GAIN</typeratio>
+            <typeratio>VITESSE</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
             <name>Vitesse Tout x2</name>
-            <logo>tout150.png</logo>
-            <seuil>150</seuil>
+            <logo>dieu.png</logo>
+            <seuil>50</seuil>
             <idcible>0</idcible>
             <ratio>2</ratio>
+            <typeratio>VITESSE</typeratio>
+            <unlocked></unlocked>
+        </pallier>
+        <pallier>
+            <name>Vitesse Tout x3.33</name>
+            <logo>dieu.png</logo>
+            <seuil>100</seuil>
+            <idcible>0</idcible>
+            <ratio>3.33</ratio>
             <typeratio>VITESSE</typeratio>
             <unlocked></unlocked>
         </pallier>
     </allunlocks>
     <upgrades>
         <pallier>
-            <name>Servlet CSS</name>
-            <logo>cdilunaire.png</logo>
-            <seuil>1000</seuil>
+            <name>Chips x3</name>
+            <logo>chips.jpg</logo>
+            <seuil>50000</seuil>
             <idcible>1</idcible>
             <ratio>3</ratio>
             <typeratio>GAIN</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name>Saké du Wok Wang</name>
-            <logo>cdilunaire.png</logo>
-            <seuil>10000</seuil>
-            <idcible>1</idcible>
-            <ratio>2</ratio>
-            <typeratio>VITESSE</typeratio>
-            <unlocked></unlocked>
-        </pallier>
-        <pallier>
-            <name>Chinese Women</name>
-            <logo>cdilunaire.png</logo>
-            <seuil>20000</seuil>
-            <idcible>1</idcible>
-            <ratio>3</ratio>
-            <typeratio>GAIN</typeratio>
-            <unlocked></unlocked>
-        </pallier>
-        <pallier>
-            <name>Livre de la BU</name>
-            <logo>cdilunaire.png</logo>
+            <name>Vitesse Chips x2</name>
+            <logo>chips.jpg</logo>
             <seuil>100000</seuil>
             <idcible>1</idcible>
             <ratio>2</ratio>
@@ -141,8 +260,26 @@ and open the template in the editor.
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name>Androboom pour les forts</name>
-            <logo>pingping.png</logo>
+            <name>Chips x3</name>
+            <logo>chips.jpg</logo>
+            <seuil>150000</seuil>
+            <idcible>1</idcible>
+            <ratio>3</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked></unlocked>
+        </pallier>
+        <pallier>
+            <name>Vitesse Frites x2</name>
+            <logo>frites.png</logo>
+            <seuil>200000</seuil>
+            <idcible>1</idcible>
+            <ratio>2</ratio>
+            <typeratio>VITESSE</typeratio>
+            <unlocked></unlocked>
+        </pallier>
+        <pallier>
+            <name>Frites x3.33</name>
+            <logo>frites.png</logo>
             <seuil>50000</seuil>
             <idcible>2</idcible>
             <ratio>3.33</ratio>
@@ -150,46 +287,19 @@ and open the template in the editor.
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name>Turkish Boi Rage</name>
-            <logo>pingping.png</logo>
-            <seuil>1000000</seuil>
-            <idcible>2</idcible>
-            <ratio>2</ratio>
-            <typeratio>VITESSE</typeratio>
-            <unlocked></unlocked>
-        </pallier>
-        <pallier>
-            <name>Kârcâsône</name>
-            <logo>pingping.png</logo>
-            <seuil>15000000</seuil>
-            <idcible>2</idcible>
-            <ratio>3.33</ratio>
-            <typeratio>GAIN</typeratio>
-            <unlocked></unlocked>
-        </pallier>
-        <pallier>
-            <name>Coupe du monde de Tchoukball</name>
-            <logo>tout.png</logo>
+            <name>Vitesse Frites x2</name>
+            <logo>frites.png</logo>
             <seuil>100000</seuil>
-            <idcible>0</idcible>
-            <ratio>3.33</ratio>
-            <typeratio>GAIN</typeratio>
-            <unlocked></unlocked>
-        </pallier>
-        <pallier>
-            <name>Les Mémoires de Spinoza</name>
-            <logo>tout.png</logo>
-            <seuil>1000000</seuil>
-            <idcible>0</idcible>
+            <idcible>2</idcible>
             <ratio>2</ratio>
             <typeratio>VITESSE</typeratio>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name>Big Mac de Léa</name>
-            <logo>tout.png</logo>
-            <seuil>5000000</seuil>
-            <idcible>0</idcible>
+            <name>Frites x3.33</name>
+            <logo>frites.png</logo>
+            <seuil>150000</seuil>
+            <idcible>2</idcible>
             <ratio>3.33</ratio>
             <typeratio>GAIN</typeratio>
             <unlocked></unlocked>
@@ -197,8 +307,8 @@ and open the template in the editor.
     </upgrades>
     <angelupgrades>
         <pallier>
-            <name>Rattrapage in-extremis</name>
-            <logo>tout.png</logo>
+            <name>Vitesse Tout x2</name>
+            <logo>angel.png</logo>
             <seuil>1</seuil>
             <idcible>0</idcible>
             <ratio>2</ratio>
@@ -206,8 +316,8 @@ and open the template in the editor.
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name>Feuille de présence</name>
-            <logo>maltesers.png</logo>
+            <name>Maltesers</name>
+            <logo>angel.png</logo>
             <seuil>10000</seuil>
             <idcible>1</idcible>
             <ratio>3</ratio>
@@ -215,8 +325,8 @@ and open the template in the editor.
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name>Tournoi de Ping Pong</name>
-            <logo>pingping.png</logo>
+            <name>Ping Ping</name>
+            <logo>angel.png</logo>
             <seuil>100000</seuil>
             <idcible>2</idcible>
             <ratio>3</ratio>
@@ -226,17 +336,45 @@ and open the template in the editor.
     </angelupgrades>
     <managers>
         <pallier>
-            <name>Professeur Maltesers</name>
-            <logo>maltesers.png</logo>
-            <seuil>1000</seuil>
+            <name>Ronald McDonald</name>
+            <logo>mcdo.png</logo>
+            <seuil>4000</seuil>
             <idcible>1</idcible>
             <unlocked></unlocked>
         </pallier>
         <pallier>
-            <name>Tupperwarrior</name>
-            <logo>tupperwarrior.png</logo>
-            <seuil>10000</seuil>
+            <name>Patatain America</name>
+            <logo>mrpatate.png</logo>
+            <seuil>50000</seuil>
             <idcible>2</idcible>
+            <unlocked></unlocked>
+        </pallier>
+        <pallier>
+            <name>Colonel Sanders</name>
+            <logo>kfc.png</logo>
+            <seuil>600000</seuil>
+            <idcible>3</idcible>
+            <unlocked></unlocked>
+        </pallier>
+        <pallier>
+            <name>Patate sautante</name>
+            <logo>dieu.png</logo>
+            <seuil>70000000</seuil>
+            <idcible>4</idcible>
+            <unlocked></unlocked>
+        </pallier>
+        <pallier>
+            <name>My Life is Potato</name>
+            <logo>life.png</logo>
+            <seuil>160000000</seuil>
+            <idcible>5</idcible>
+            <unlocked></unlocked>
+        </pallier>
+        <pallier>
+            <name>Patate Mobile</name>
+            <logo>maxime.png</logo>
+            <seuil>2000000000</seuil>
+            <idcible>6</idcible>
             <unlocked></unlocked>
         </pallier>
     </managers>
