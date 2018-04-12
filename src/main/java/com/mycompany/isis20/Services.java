@@ -172,19 +172,19 @@ public class Services {
                     //Calcul de la nombre de productions pdt tps de veille
                     int n = (int) Math.floor(t / p.getVitesse());
                     //Mise à jour de l'argent et du score
-                    world.setMoney(world.getMoney() + p.getRevenu() * n * p.getQuantite()*10);//enelever le x1000
+                    world.setMoney(world.getMoney() + p.getRevenu() * n * p.getQuantite());//enelever le x1000
                     world.setScore(world.getScore() + p.getRevenu() * n * p.getQuantite());
-                    //p.setTimeleft(n * p.getVitesse() - t);
+                    p.setTimeleft(n * p.getVitesse() - t);
                 } else {
                     //le produit n'a toujours pas fini sa production
-                    //p.setTimeleft(p.getTimeleft() - tempsEcoule);
+                    p.setTimeleft(p.getTimeleft() - tempsEcoule);
                 }
             } else {
                 //pas de manager, le produit arrête sa production direct quand il a fini mais on doit pouvoir voir la production d'un long produit qd mm
                 if (tempsEcoule > p.getTimeleft() && p.getTimeleft() > 0) {
                     //Le temps est ecoule
                     //Mise a jour des scores
-                    world.setMoney(world.getMoney() + p.getRevenu() * p.getQuantite()*10);//enlever le x1000
+                    world.setMoney(world.getMoney() + p.getRevenu() * p.getQuantite());//enlever le x1000
                     world.setScore(world.getScore() + p.getRevenu() * p.getQuantite());
                     p.setTimeleft(0);
                 } else if(tempsEcoule < p.getTimeleft()){
