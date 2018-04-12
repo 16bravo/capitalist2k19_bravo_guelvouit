@@ -57,9 +57,10 @@ public class GenericResource {
     @GET
     @Produces(MediaType.APPLICATION_XML)
     @Path("world")
-    public World getXml(@Context HttpServletRequest request) throws FileNotFoundException {
+    public World getXml(@Context HttpServletRequest request) throws FileNotFoundException, JAXBException {
         username = request.getHeader("X-User");
-        return services.readWorldFromXml(username);
+        //return services.readWorldFromXml(username);
+        return services.getWorld(username);
     }
 
     /**
@@ -71,9 +72,10 @@ public class GenericResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("world")
-    public String getJson(@Context HttpServletRequest request) throws FileNotFoundException {
+    public String getJson(@Context HttpServletRequest request) throws FileNotFoundException, JAXBException {
         username = request.getHeader("X-User");
-        return gson.toJson(services.readWorldFromXml(username));
+        //return gson.toJson(services.readWorldFromXml(username));
+        return gson.toJson(services.getWorld(username));
     }
 
     /**
@@ -105,5 +107,18 @@ public class GenericResource {
         PallierType manager = new Gson().fromJson(content, PallierType.class);
         username = request.getHeader("X-User");
         services.updateManager(username, manager);
+    }
+    
+    /**
+     * PUT method for updating or creating an instance of GenericResource
+     *
+     * @param content representation for the resource
+     * @return an HTTP response with content of the updated or created resource.
+     */
+    @PUT
+    @Consumes("application/json")
+    @Path("upgrade")
+    public void putUpgrade(String content,@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
+        
     }
 }
