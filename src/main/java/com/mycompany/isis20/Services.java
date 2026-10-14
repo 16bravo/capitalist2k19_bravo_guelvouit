@@ -7,6 +7,7 @@ package com.mycompany.isis20;
 
 import generated.PallierType;
 import generated.ProductType;
+import generated.TyperatioType;
 import generated.World;
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,7 +17,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.xml.bind.*;
+import jakarta.xml.bind.*;
 
 /**
  *
@@ -24,22 +25,25 @@ import javax.xml.bind.*;
  */
 public class Services {
 
+    private static String fileName(String username) {
+        return String.valueOf(username).replaceAll("[^A-Za-z0-9_-]", "_") + "-world.xml";
+    }
+
     public World readWorldFromXml(String username) throws FileNotFoundException {
 
         try {
             JAXBContext cont = JAXBContext.newInstance(World.class);
             Unmarshaller u = cont.createUnmarshaller();
-            InputStream input = null;
-            try {
-                input = new FileInputStream(username + "-world.xml");
-            } catch (Exception e) {
-                input = getClass().getClassLoader().getResourceAsStream("world.xml");
+            File file = new File(fileName(username));
+            if (file.exists()) {
+                try (InputStream input = new FileInputStream(file)) {
+                    return (World) u.unmarshal(input);
+                }
             }
-
-            World world = (World) u.unmarshal(input);
-            
-            return world;
-        } catch (JAXBException ex) {
+            try (InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml")) {
+                return (World) u.unmarshal(input);
+            }
+        } catch (JAXBException | java.io.IOException ex) {
             Logger.getLogger(Services.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
@@ -49,15 +53,14 @@ public class Services {
         try {
             JAXBContext cont = JAXBContext.newInstance(World.class);
             Marshaller m = cont.createMarshaller();
-
-            //System.out.println("adresse (saveWorld) : "+adr);
-            FileOutputStream output = new FileOutputStream(username + "-world.xml");
-            m.marshal(world, output);
-        } catch (JAXBException ex) {
+            try (OutputStream output = new FileOutputStream(fileName(username))) {
+                m.marshal(world, output);
+            }
+        } catch (JAXBException | java.io.IOException ex) {
             Logger.getLogger(Services.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public World getWorld(String username) throws FileNotFoundException, JAXBException{
         World world = readWorldFromXml(username);
         updateScore(world);
@@ -111,14 +114,7 @@ public class Services {
             for (PallierType p : product.getPalliers().getPallier()) {
                 if (p.isUnlocked() == false && p.getSeuil() <= product.getQuantite()) {
                     p.setUnlocked(true);
-                    if (p.getTyperatio().equals("GAIN")) {
-                        product.setRevenu(product.getRevenu() * p.getRatio());
-                    } else if (p.getTyperatio().equals("VITESSE")) {
-                        product.setVitesse((int) Math.round(product.getVitesse() / p.getRatio()));
-                        product.setTimeleft((long) Math.round(product.getTimeleft() / p.getRatio()));
-                    } else if (p.getTyperatio().equals("ANGE")) {
-                        //pas defini dans produit, lier aux angelupgrades etc
-                    }
+                    applyBonus(product, p);
                 }
             }
         } else {
@@ -129,6 +125,45 @@ public class Services {
              world.setScore(world.getScore() + product.getQuantite() * product.getRevenu());*/
         }
         // sauvegarder les changements du monde
+        saveWorldToXml(username, world);
+        return true;
+    }
+
+    // applique le bonus d'un pallier (unlock ou cash upgrade) à un produit
+    private void applyBonus(ProductType product, PallierType p) {
+        if (p.getTyperatio() == TyperatioType.GAIN) {
+            product.setRevenu(product.getRevenu() * p.getRatio());
+        } else if (p.getTyperatio() == TyperatioType.VITESSE) {
+            product.setVitesse((int) Math.round(product.getVitesse() / p.getRatio()));
+            product.setTimeleft(Math.round(product.getTimeleft() / p.getRatio()));
+        }
+        // ANGE : lié aux angel upgrades, non géré ici
+    }
+
+    // prend en paramètre le pseudo du joueur et le cash upgrade acheté.
+    // renvoie false si l'action n'a pas pu être traitée (upgrade inconnu, déjà acheté, pas assez d'argent)
+    public Boolean updateUpgrade(String username, PallierType newupgrade) throws JAXBException, FileNotFoundException {
+        World world = getWorld(username);
+        // plusieurs upgrades portent le même nom : on cherche le premier non acheté qui correspond
+        PallierType upgrade = null;
+        for (PallierType u : world.getUpgrades().getPallier()) {
+            if (!u.isUnlocked() && u.getName().equals(newupgrade.getName())
+                    && u.getIdcible() == newupgrade.getIdcible() && u.getSeuil() == newupgrade.getSeuil()) {
+                upgrade = u;
+                break;
+            }
+        }
+        if (upgrade == null || world.getMoney() < upgrade.getSeuil()) {
+            return false;
+        }
+        upgrade.setUnlocked(true);
+        world.setMoney(world.getMoney() - upgrade.getSeuil());
+        // idcible 0 = tous les produits
+        for (ProductType product : world.getProducts().getProduct()) {
+            if (upgrade.getIdcible() == 0 || upgrade.getIdcible() == product.getId()) {
+                applyBonus(product, upgrade);
+            }
+        }
         saveWorldToXml(username, world);
         return true;
     }
@@ -170,11 +205,13 @@ public class Services {
                 if (t >= 0) {
                     //le produit a terminé sa production
                     //Calcul de la nombre de productions pdt tps de veille
-                    int n = (int) Math.floor(t / p.getVitesse());
+                    // (le cycle en cours, s'il y en avait un, compte comme une production terminée)
+                    int n = (int) Math.floor(t / p.getVitesse()) + (p.getTimeleft() > 0 ? 1 : 0);
                     //Mise à jour de l'argent et du score
                     world.setMoney(world.getMoney() + p.getRevenu() * n * p.getQuantite());//enelever le x1000
                     world.setScore(world.getScore() + p.getRevenu() * n * p.getQuantite());
-                    p.setTimeleft(n * p.getVitesse() - t);
+                    // temps restant avant la fin du cycle en cours (toujours > 0)
+                    p.setTimeleft(p.getVitesse() - (t % p.getVitesse()));
                 } else {
                     //le produit n'a toujours pas fini sa production
                     p.setTimeleft(p.getTimeleft() - tempsEcoule);

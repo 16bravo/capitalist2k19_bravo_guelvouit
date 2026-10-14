@@ -1,0 +1,3 @@
+target/
+*-world.xml
+!src/main/resources/*-world.xml
